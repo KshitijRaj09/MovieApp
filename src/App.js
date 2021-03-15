@@ -10,7 +10,7 @@ export default ()=> {
     useEffect(() => {
       async function searchMovies(){
           try{
-            const {data} = await axios.get(`http://api.tvmaze.com/shows`);
+            const {data} = await axios.get(`https://api.tvmaze.com/shows`);
             setMovies(data);
             console.log(data);
           }
