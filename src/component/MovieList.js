@@ -15,8 +15,6 @@ export default function MovieList({movies}) {
     return (
         <div className = 'showmovie'>
             {showMovieList}
-        </div>
-        
-        
+        </div>   
     )
 }
