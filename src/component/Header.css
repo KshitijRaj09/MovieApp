@@ -1,16 +1,21 @@
+.header-inner-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 35px;
+}
 
-.header-inner-div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin : 5px 35px;
-  }
-  
-  
-  .favourite{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  
+a {
+  text-decoration: none;
+  color: darkcyan;
+}
+
+.nav-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fas.fa-home {
+  margin-right: 20px;
+}

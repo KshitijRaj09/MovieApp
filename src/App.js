@@ -1,34 +1,21 @@
-import axios from 'axios';
-import React,{useState, useEffect} from 'react'; 
-import MovieList from './component/MovieList';
-import './App.css';
-import Header from './component/Header';
+import React from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+import "./App.css";
+import Header from "./component/Header";
+import HomePage from "./component/HomePage";
+import Favourite from "./component/Favourite";
 
-export default ()=> {
-  const [movies, setMovies] = useState([]);
-  const [loading, setLoading] = useState(false);
-    useEffect(() => {
-      async function searchMovies(){
-          try{
-            const {data} = await axios.get(`http://api.tvmaze.com/shows`);
-            setMovies(data);
-            console.log(data);
-          }
-          catch(error){
-            setLoading(false);
-            console.log(error.message, loading);
-          }
-        }
-        searchMovies();
-        // eslint-disable-next-line
-      }, [])
-    
-  const addToFavourite=()=>{ 
-  }    
+const App = () => {
   return (
-    <div>
-    <Header/>
-      {movies.length>0&&<MovieList movies={movies} addToFavourite={addToFavourite}/>}
-    </div>
-    );
-}
+    <>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/favourite" component={Favourite} />
+        <Redirect to="/" />
+      </Switch>
+    </>
+  );
+};
+
+export default App;
